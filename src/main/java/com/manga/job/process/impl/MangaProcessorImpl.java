@@ -65,7 +65,8 @@ public class MangaProcessorImpl implements MangaProcessor {
         for (int i = 0; i < elements.size(); i++) {
             try {
                 Chapter chapter = new Chapter();
-                chapter.setName(elements.get(i).text());
+                String rawText = elements.get(i).text();
+                chapter.setName(rawText.substring(0,rawText.length()-2));//remove last character
                 String chapterURL = elements.get(i).attr("abs:href");
                 chapter.setPictures(getPicturesFromChapter(chapterURL));
                 chapters.add(chapter);

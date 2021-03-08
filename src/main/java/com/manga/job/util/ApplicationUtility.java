@@ -64,7 +64,7 @@ public final class ApplicationUtility {
                 }
                 int subindex = 1;
                 for (Image image : chapter.getPictures()) {
-                    File newFile = new File(theDir.getAbsolutePath() + "\\" + chapter.getName() + subindex + ".jpg");
+                    File newFile = new File(theDir.getAbsolutePath() + "\\" + chapter.getName() +" "+ subindex + ".jpg");
                     ImageIO.write(toBufferedImage(image), "jpg", newFile);
                     subindex++;
                 }
